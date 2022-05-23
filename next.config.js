@@ -4,7 +4,7 @@ module.exports = {
 		return [
 			{
 				source: "/metalives/:path*",
-				destination: "https://www.reclamajus.com.br/:path*",
+				destination: "https://site-a-metalives.vercel.app/:path*",
 			},
 		];
 	},
