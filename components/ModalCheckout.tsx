@@ -7,7 +7,7 @@ export interface ModalCheckoutRef {
 }
 
 const ModalCheckout = forwardRef<ModalCheckoutRef>(function modalCheckout(_props, ref) {
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 	const [sku, setSku] = useState<string>();
 
 	useImperativeHandle(ref, () => ({

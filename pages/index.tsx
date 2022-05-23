@@ -8,18 +8,14 @@ const IndexPage = () => {
 	const refIframe = useRef<HTMLIFrameElement>();
 
 	useEffect(() => {
-		const contentWindow = refIframe.current?.contentWindow;
-
-		if (!contentWindow) return;
-
-		contentWindow.onmessage = (ev) => {
+		window.addEventListener("message", (ev) => {
 			if (ev.data.type === "ON_CLICK_PRODUCT") {
 				if (refModalCheckout.current) {
 					refModalCheckout.current.open(ev.data.sku);
 				}
 			}
-		};
-	}, [refIframe]);
+		});
+	}, [refModalCheckout]);
 
 	return (
 		<Layout title="Site B Sellersface">
@@ -28,7 +24,7 @@ const IndexPage = () => {
 					Site B Sellersface
 				</h1>
 
-				<iframe src="/metalives/" height="800px" frameBorder="0" ref={refIframe} />
+				<iframe src="https://site-a-metalives.vercel.app/" height="800px" frameBorder="0" ref={refIframe} />
 			</div>
 			<ModalCheckout ref={refModalCheckout} />
 		</Layout>
