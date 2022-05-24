@@ -8,6 +8,10 @@ const IndexPage = () => {
 	const refIframe = useRef<HTMLIFrameElement>();
 
 	useEffect(() => {
+		// Site B -> Site A
+		refIframe.current.contentWindow.postMessage({ type: "HELLO", message: "Hello World!" }, "*");
+
+		// Site A -> Site B
 		window.addEventListener("message", (ev) => {
 			if (ev.data.type === "ON_CLICK_PRODUCT") {
 				if (refModalCheckout.current) {
