@@ -47,27 +47,29 @@ const ModalCheckout = forwardRef<ModalCheckoutRef>(function modalCheckout(_props
 						>
 							<Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
 								<Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-									Checkout do item {sku}
+									Checkout do item de sku: {sku}
 								</Dialog.Title>
 								<Dialog.Description>
-									<div className="mt-2">
+									<div className="my-2">
 										<p className="text-sm text-gray-500">
-											Para finalizar o checkout do item {sku}, você precisa estar logado.
+											Para finalizar o checkout do item de sku: {sku}, você precisa estar logado.
 										</p>
 									</div>
 								</Dialog.Description>
-								<button
-									className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-									onClick={() => setIsOpen(false)}
-								>
-									Finalizar
-								</button>
-								<button
-									className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-									onClick={() => setIsOpen(false)}
-								>
-									Cancelar
-								</button>
+								<div className="flex space-x-3">
+									<button
+										className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+										onClick={() => setIsOpen(false)}
+									>
+										Finalizar
+									</button>
+									<button
+										className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+										onClick={() => setIsOpen(false)}
+									>
+										Cancelar
+									</button>
+								</div>
 							</Dialog.Panel>
 						</Transition.Child>
 					</div>
