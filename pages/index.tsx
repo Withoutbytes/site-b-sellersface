@@ -19,7 +19,7 @@ const IndexPage = () => {
 				}
 			}
 		});
-	}, [refModalCheckout]);
+	}, []);
 
 	return (
 		<Layout title="Site B Sellersface">
